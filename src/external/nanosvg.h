@@ -1219,7 +1219,7 @@ static unsigned int nsvg__parseColorHex(const char* str)
 		return NSVG_RGB(r, g, b);
 	if (sscanf(str, "#%1x%1x%1x", &r, &g, &b) == 3 )		// 1 digit hex, e.g. #abc -> 0xccbbaa
 		return NSVG_RGB(r*17, g*17, b*17);			// same effect as (r<<4|r), (g<<4|g), ..
-	return NSVG_RGB(128, 128, 128);
+	return NSVG_RGB(255, 255, 255);
 }
 
 // Parse rgb color. The pointer 'str' must point at "rgb(" (4+ characters).
@@ -1445,7 +1445,7 @@ static unsigned int nsvg__parseColorName(const char* str)
 		}
 	}
 
-	return NSVG_RGB(128, 128, 128);
+	return NSVG_RGB(255, 255, 255);
 }
 
 static unsigned int nsvg__parseColor(const char* str)
