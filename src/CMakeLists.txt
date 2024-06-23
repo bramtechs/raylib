@@ -24,6 +24,7 @@ endif()
 set(raylib_public_headers
     raylib.h
     rlgl.h
+    config.h
     raymath.h
     )
 
