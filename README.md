@@ -1,3 +1,15 @@
+
+---
+
+Differences so far with original Raylib:
+
+- [X] Default svg color is white instead of gray.
+- [X] Enables more feature flags by default than default Raylib.
+- [X] config.h is exposed.
+- [ ] rlgl has an implementation file which makes it easier to extend.
+
+---
+
 <img align="left" style="width:260px" src="https://github.com/raysan5/raylib/blob/master/logo/raylib_logo_animation.gif" width="288px">
 
 **raylib is a simple and easy-to-use library to enjoy videogames programming.**
