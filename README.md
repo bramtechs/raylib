@@ -3,10 +3,10 @@
 
 Differences so far with original Raylib:
 
-- [X] Default svg color is white instead of gray.
-- [X] Enables more feature flags by default than default Raylib.
-- [X] config.h is exposed.
-- [ ] rlgl has an implementation file which makes it easier to extend.
+- [X] Default svg color is white instead of gray
+- [X] More feature flags enabled by default
+- [X] Exposed config.h header
+- [ ] Give rlgl own implementation file (easier to extend)
 
 ---
 
