@@ -67,8 +67,6 @@ static const char *rlGetCompressedFormatName(int format); // Get compressed form
 #endif  // RLGL_SHOW_GL_DETAILS_INFO
 #endif  // GRAPHICS_API_OPENGL_33 || GRAPHICS_API_OPENGL_ES2
 
-int rlGetPixelDataSize(int width, int height, int format);   // Get pixel data size in bytes (image or texture)
-
 // Auxiliar matrix math functions
 typedef struct rl_float16 {
     float v[16];
