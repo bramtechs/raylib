@@ -1077,6 +1077,17 @@ typedef struct rlglData {
 
 typedef void *(*rlglLoadProc)(const char *name);   // OpenGL extension functions loader signature (same as GLADloadproc)
 
+// Auxiliar matrix math functions
+typedef struct rl_float16 {
+    float v[16];
+} rl_float16;
+static rl_float16 rlMatrixToFloatV(Matrix mat);             // Get float array of matrix data
+#define rlMatrixToFloat(mat) (rlMatrixToFloatV(mat).v)      // Get float vector for Matrix
+Matrix rlMatrixIdentity(void);                       // Get identity matrix
+Matrix rlMatrixMultiply(Matrix left, Matrix right);  // Multiply two matrices
+Matrix rlMatrixTranspose(Matrix mat);                // Transposes provided matrix
+Matrix rlMatrixInvert(Matrix mat);                   // Invert provided matrix
+
 #ifdef __cplusplus
 extern "C" {
 #endif

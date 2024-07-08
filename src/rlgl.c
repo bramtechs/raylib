@@ -67,17 +67,6 @@ static const char *rlGetCompressedFormatName(int format); // Get compressed form
 #endif  // RLGL_SHOW_GL_DETAILS_INFO
 #endif  // GRAPHICS_API_OPENGL_33 || GRAPHICS_API_OPENGL_ES2
 
-// Auxiliar matrix math functions
-typedef struct rl_float16 {
-    float v[16];
-} rl_float16;
-static rl_float16 rlMatrixToFloatV(Matrix mat);             // Get float array of matrix data
-#define rlMatrixToFloat(mat) (rlMatrixToFloatV(mat).v)      // Get float vector for Matrix
-static Matrix rlMatrixIdentity(void);                       // Get identity matrix
-static Matrix rlMatrixMultiply(Matrix left, Matrix right);  // Multiply two matrices
-static Matrix rlMatrixTranspose(Matrix mat);                // Transposes provided matrix
-static Matrix rlMatrixInvert(Matrix mat);                   // Invert provided matrix
-
 //----------------------------------------------------------------------------------
 // Module Functions Definition - Matrix operations
 //----------------------------------------------------------------------------------
@@ -3957,7 +3946,7 @@ static rl_float16 rlMatrixToFloatV(Matrix mat)
 }
 
 // Get identity matrix
-static Matrix rlMatrixIdentity(void)
+Matrix rlMatrixIdentity(void)
 {
     Matrix result = {
         1.0f, 0.0f, 0.0f, 0.0f,
@@ -3971,7 +3960,7 @@ static Matrix rlMatrixIdentity(void)
 
 // Get two matrix multiplication
 // NOTE: When multiplying matrices... the order matters!
-static Matrix rlMatrixMultiply(Matrix left, Matrix right)
+Matrix rlMatrixMultiply(Matrix left, Matrix right)
 {
     Matrix result = { 0 };
 
@@ -3996,7 +3985,7 @@ static Matrix rlMatrixMultiply(Matrix left, Matrix right)
 }
 
 // Transposes provided matrix
-static Matrix rlMatrixTranspose(Matrix mat)
+Matrix rlMatrixTranspose(Matrix mat)
 {
     Matrix result = { 0 };
 
@@ -4021,7 +4010,7 @@ static Matrix rlMatrixTranspose(Matrix mat)
 }
 
 // Invert provided matrix
-static Matrix rlMatrixInvert(Matrix mat)
+Matrix rlMatrixInvert(Matrix mat)
 {
     Matrix result = { 0 };
 
